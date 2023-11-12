@@ -1,4 +1,5 @@
 "use client";
+
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import { gql } from "@apollo/client";
 import { useSearchParams } from 'next/navigation'
@@ -6,7 +7,7 @@ export default function Page() {
 
   const searchParams = useSearchParams()
   const theId = searchParams.get('id')
-  
+  console.log(theId)
 
   const { data }: { data: any } = useSuspenseQuery(
     gql`
@@ -22,8 +23,7 @@ export default function Page() {
 `
   );
 
-  console.log(data.transaction.tags.find((tag: { name: string; })=>tag.name==="Content-Type").value);
-  const yo = "2314"
+
   return (
   
   

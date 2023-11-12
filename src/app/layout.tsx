@@ -6,7 +6,7 @@ import { ApolloWrapper } from "@/lib/apollo-provider";
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'ArWeave asset viewer',
+  title: 'arweave asset viewer',
   description: 'View atomic assets on ArWeave',
 }
 

@@ -9,7 +9,6 @@ import Link from "next/link";
 const query = gql`
   {
     transactions(
-      first: 100
       tags: [
         { name: "App-Name", values: ["SmartWeaveContract"] }
         { name: "Collection-Code", values: ["mfer-collection"] }
@@ -33,8 +32,6 @@ export default function Page() {
   const { data }: { data: any } = useSuspenseQuery(query);
 
   // console.log(data.transactions.edges[1].node);
-  console.log(data.transactions.edges[1].node.tags[7].value)
-  const yo = "2314"
   return (<div className=" border-red-500 flex flex-col ">
     {
     data ? (
@@ -44,7 +41,6 @@ export default function Page() {
           {data.transactions.edges.map((e:any)=>{
             return (
             <a href={`view-asset?id=${e.node.id}`} className="hover:cursor-pointer hover:bg-gray-900  bg-gray-800 justify-center rounded-md p-4 w-[40%] flex gap-8 border-red-400" key = {e.node.id}>
-            {/* <div className=" hover:cursor-pointer hover:bg-gray-900  bg-gray-800 justify-center rounded-md p-4 w-[40%] flex gap-8 border-red-400" key = {e.node.id}> */}
               <img className=" h-56 object-cover rounded-md" src={`https://arweave.net/${e.node.id}`}/>
 
               <div className="flex flex-col  justify-center text-xl">
@@ -64,5 +60,4 @@ export default function Page() {
     )
   }
 </div>)
-  // return <main>{data.data.transactions.edges[0].node.id}<div>ayein</div></main>;
 }
