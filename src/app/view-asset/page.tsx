@@ -28,7 +28,7 @@ export default function Page() {
   
   
 
-      <main className="bg-slate-950 border-2 min-h-screen flex flex-col justify-center content-center">
+      <main className="bg-slate-950  min-h-screen flex flex-col justify-center content-center">
         <div className=" bg-slate-700 rounded-md flex justify-around  mx-24  gap-4 px-4 py-3">
             <img className="w-[40%] object-cover rounded-md"  src={`https://arweave.net/${theId}`} />
             <div className="  text-lg flex min-w-[50%] py-4  flex-col gap-9 justify-center">
