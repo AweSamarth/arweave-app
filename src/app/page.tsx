@@ -40,7 +40,7 @@ export default function Page() {
         <div className="flex  flex-wrap  justify-center py-4  gap-8">
           {data.transactions.edges.map((e:any)=>{
             return (
-            <a href={`view-asset?id=${e.node.id}`} className="hover:cursor-pointer hover:bg-gray-900  bg-gray-800 justify-center rounded-md p-4 w-[40%] flex gap-8 border-red-400" key = {e.node.id}>
+            <a href={`view-asset`} onClick={()=>{localStorage.setItem("atomic_asset_id",`${e.node.id}`)}} className="hover:cursor-pointer hover:bg-gray-900  bg-gray-800 justify-center rounded-md p-4 w-[40%] flex gap-8 border-red-400" key = {e.node.id}>
               <img className=" h-56 object-cover rounded-md" src={`https://arweave.net/${e.node.id}`}/>
 
               <div className="flex flex-col  justify-center text-xl">
